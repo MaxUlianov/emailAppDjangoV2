@@ -1,12 +1,27 @@
+{% extends 'base.html' %}
 {% block content %}
 
-    <h1>Send email</h1>
-    <h4>Enter your email data</h4>
+    <h1 class="title">Send email</h1>
+    <h4 class="subtitle">Enter your email data</h4>
 
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit"/>
+
+        <div class="field">
+            <label class="label">Recipient email address</label>
+            <div class="control">
+              {{ form.address }}
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Email Text</label>
+            <div class="control">
+              {{ form.email_text }}
+            </div>
+        </div>
+
+        <input class="button is-primary" type="submit"/>
     </form>
 
 {% endblock content %}
