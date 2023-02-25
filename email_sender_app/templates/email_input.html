@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block navigation %}
+    {% include "navbar_plain_email.html" %}
+{% endblock navigation %}
+
 {% block content %}
 
     <h1 class="title">Send email</h1>
@@ -13,7 +18,7 @@
               {{ form.address }}
             </div>
         </div>
-
+        
         <div class="field">
             <label class="label">Email Text</label>
             <div class="control">

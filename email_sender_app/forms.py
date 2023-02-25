@@ -18,3 +18,25 @@ class EmailDataForm(forms.Form):
 
     def send_email(self):
         pass
+
+
+class EmailHTMLDataForm(EmailDataForm):
+    address = forms.EmailField(label="Email Address", widget=forms.EmailInput(attrs={
+        "placeholder": "Enter email address",
+        "class": "input is-primary"
+        })
+    )
+    html_text = forms.CharField(
+        label="HTML Contents", widget=forms.Textarea(attrs={
+            "rows": 5,
+            "placeholder": "Enter html contents",
+            "class": "textarea is-primary is-normal"
+        })
+    )
+    email_text = forms.CharField(
+        label="Email Text", widget=forms.Textarea(attrs={
+            "rows": 5,
+            "placeholder": "Enter alt email text",
+            "class": "textarea is-primary is-normal"
+        })
+    )
