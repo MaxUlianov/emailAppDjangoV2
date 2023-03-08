@@ -9,3 +9,9 @@ venv/
 db.sqlite3
 .env
 *.env
+
+# celery system file
+celerybeat-schedule.db
+
+# Bulma css
+static/bulma.css
