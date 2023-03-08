@@ -7,7 +7,7 @@ from django.views.generic.base import TemplateView
 class EmailDataFormView(FormView):
     template_name = 'email_input.html'
     form_class = EmailDataForm
-    success_url = '/email_sender_success/'
+    success_url = '/email_sender/email_sender_success/'
 
     def form_valid(self, form):
         form.send_email()

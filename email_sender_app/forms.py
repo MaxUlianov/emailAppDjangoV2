@@ -1,5 +1,5 @@
 from django import forms
-# from email_sender_app.tasks import send_email
+from email_sender_app.tasks import send_email_task
 
 
 class EmailDataForm(forms.Form):
@@ -17,7 +17,8 @@ class EmailDataForm(forms.Form):
     )
 
     def send_email(self):
-        pass
+        send_email_task.delay(recipients=self.cleaned_data["address"],
+                              text_message=self.cleaned_data["email_text"])
 
 
 class EmailHTMLDataForm(EmailDataForm):

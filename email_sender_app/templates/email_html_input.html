@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+    {% include "navbar_html_email.html" %}
+{% endblock navigation %}
+
+{% block content %}
+    <h1 class="title">Send email</h1>
+    <h4 class="subtitle">Enter your email data</h4>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="field">
+            <label class="label">Recipient email address</label>
+            <div class="control">
+              {{ form.address }}
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">HTML Email Contents</label>
+            <div class="control">
+              {{ form.html_text }}
+            </div>
+            <div class="control" style="margin-top: 0.5rem">
+                <a href="/email_sender/view_html/" class="button is-success" type="submit">View HTML</a>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">HTML Alternative Text</label>
+            <div class="control">
+              {{ form.email_text }}
+            </div>
+        </div>
+
+        <input class="button is-primary" type="submit"/>
+    </form>
+
+{% endblock content %}
