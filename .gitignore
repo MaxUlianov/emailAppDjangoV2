@@ -15,4 +15,4 @@ celerybeat-schedule.db
 
 # Bulma css
 static/bulma.css
-*.bulma.css
+bulma.css
