@@ -8,6 +8,12 @@ class EmailDataForm(forms.Form):
         "class": "input is-primary"
         })
     )
+    subject = forms.CharField(
+        label="Email Text", widget=forms.Textarea(attrs={
+            "placeholder": "Email subject",
+            "class": "input is-primary"
+        })
+    )
     email_text = forms.CharField(
         label="Email Text", widget=forms.Textarea(attrs={
             "rows": 5,
@@ -22,11 +28,6 @@ class EmailDataForm(forms.Form):
 
 
 class EmailHTMLDataForm(EmailDataForm):
-    address = forms.EmailField(label="Email Address", widget=forms.EmailInput(attrs={
-        "placeholder": "Enter email address",
-        "class": "input is-primary"
-        })
-    )
     html_text = forms.CharField(
         label="HTML Contents", widget=forms.Textarea(attrs={
             "rows": 5,
@@ -34,10 +35,13 @@ class EmailHTMLDataForm(EmailDataForm):
             "class": "textarea is-primary is-normal"
         })
     )
-    email_text = forms.CharField(
-        label="Email Text", widget=forms.Textarea(attrs={
-            "rows": 5,
-            "placeholder": "Enter alt email text",
+
+
+class PreviewHTMLForm(forms.Form):
+    html = forms.CharField(
+        label="HTML Text", widget=forms.Textarea(attrs={
+            "rows": 10,
+            "placeholder": "Enter your HTML here to preview",
             "class": "textarea is-primary is-normal"
         })
     )

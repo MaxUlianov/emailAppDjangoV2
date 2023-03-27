@@ -128,6 +128,22 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Logging settings
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Django .env email settings
 EMAIL_HOST = os.environ['EMAIL_HOST']

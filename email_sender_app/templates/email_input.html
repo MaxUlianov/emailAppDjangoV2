@@ -18,6 +18,13 @@
               {{ form.address }}
             </div>
         </div>
+
+        <div class="field">
+            <label class="label">Email subject</label>
+            <div class="control">
+              {{ form.subject }}
+            </div>
+        </div>
         
         <div class="field">
             <label class="label">Email Text</label>
@@ -26,7 +33,7 @@
             </div>
         </div>
 
-        <input class="button is-primary" type="submit"/>
+        <input class="button is-primary" value="Send email" type="submit"/>
     </form>
 
 {% endblock content %}

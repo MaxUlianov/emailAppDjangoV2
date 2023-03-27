@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">Preview HTML</h1>
+    <h4 class="subtitle">Enter your HTML email to preview</h4>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="field">
+            <label class="label">HTML Text</label>
+            <div class="control">
+              {{ form.html }}
+            </div>
+        </div>
+
+        <input class="button is-primary" value="Preview" type="submit"/>
+    </form>
+</div>
+{% endblock content %}
