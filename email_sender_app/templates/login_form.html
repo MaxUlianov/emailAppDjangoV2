@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1 class="title">Login</h1>
+    <h4 class="subtitle">Enter your credentials to connect to email server</h4>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="field">
+            <label class="label">User Email Address</label>
+            <div class="control">
+              {{ form.email }}
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">User Email Password</label>
+            <div class="control">
+              {{ form.password }}
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">User Email host (provider)</label>
+            <div class="control">
+              {{ form.host }}
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Email Host Port</label>
+            <div class="control">
+              {{ form.port }}
+            </div>
+        </div>
+        <input class="button is-success" value="Save credentials" type="submit"/>
+    </form>
+
+{% endblock content %}

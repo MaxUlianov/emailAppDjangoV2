@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1 class="title">Current Login</h1>
+    <h4 class="subtitle">Your email credentials currently used</h4>
+
+    <div class="field">
+        <label class="label">User Email Address</label>
+        <div class="control">
+          {{ email }}
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">User Email host (provider)</label>
+        <div class="control">
+          {{ host }}
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Email Host Port</label>
+        <div class="control">
+          {{ port }}
+        </div>
+    </div>
+
+    <div class="field">
+      <div class="columns">
+        <div class="column is-narrow">
+          <form method="post">
+            {% csrf_token %}
+            <input class="button is-danger" value="Sign out" type="submit"/>
+          </form>
+        </div>
+
+        <div class="column">
+          <a href="/email_sender/" class="button is-success">Back to email</a>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
