@@ -7,35 +7,6 @@ from django.views.generic.base import TemplateView
 from django.utils.html import format_html
 
 
-# def email_form(request):
-#     form = EmailDataForm(request.POST or None)
-#     if request.method == 'GET':
-#         return render(request, 'email_input.html', {'form': form})
-#
-#     elif request.method == 'POST':
-#         logging.info(f"request = {request.POST}")
-#         if form.is_valid():
-#             form.send_email()
-#             return redirect('email_send_success')
-
-
-# def email_html_form(request):
-#     form = EmailHTMLDataForm(request.POST or None)
-#     if request.method == 'GET':
-#         logging.info('hi?')
-#         return render(request, 'email_html_input.html', {'form': form})
-#
-#     elif request.method == 'POST':
-#         logging.debug(f'what')
-#         logging.info(f"html_text = {request}")
-#
-#         if request.POST.get['html_text']:
-#             request.session['html_text'] = request.POST.get['html_text']
-#         if form.is_valid():
-#             form.send_email()
-#             return redirect('email_send_success')
-
-
 class EmailDataFormView(FormView):
     template_name = 'email_input.html'
     form_class = EmailDataForm
