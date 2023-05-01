@@ -53,18 +53,18 @@ class LoginView(View):
                 'port': data['port']
             })
         else:
-            # Redirect to login_form
+            # Redirect to LoginForm
             return redirect('email_sender_app:login_form')
 
     def post(self, request):
-        # Delete creds, redirect to login_form
+        # Delete creds, redirect to LoginForm
         erase_user_credentials()
         return redirect('email_sender_app:login_form')
 
 
 class LoginFormView(View):
     def get(self, request):
-        # Render login_form
+        # Render LoginForm
         form = LoginForm()
         return render(request, 'login_form.html', {'form': form})
 
